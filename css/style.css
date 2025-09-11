@@ -1,0 +1,101 @@
+/* Global safety: images never overflow their container */
+img { max-width: 100%; height: auto; }
+  
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:70vh;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  
+  /* instant gradient while video loads */
+  .hero__bg{
+    position:absolute; inset:0; z-index:-2;
+    background:
+      radial-gradient(1200px 800px at 10% 20%, rgba(255,255,255,.08), transparent 60%),
+      radial-gradient(900px 600px at 90% 80%, rgba(0,0,0,.06), transparent 55%),
+      linear-gradient(115deg,#f7b67a 0%, #ef9a57 40%, #f1b97e 100%);
+    animation: bg-pan 18s ease-in-out infinite alternate;
+    background-size: 140% 140%, 140% 140%, 200% 200%;
+  }
+  @keyframes bg-pan{
+    0%{ background-position: 0% 0%, 100% 100%, 0% 50%; }
+    50%{ background-position: 50% 50%, 50% 50%, 100% 50%; }
+    100%{ background-position: 100% 100%, 0% 0%, 0% 100%; }
+  }
+  
+  /* video fills container */
+  .hero__video{
+    position:absolute; inset:0; z-index:-1;
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    filter: saturate(1.05) contrast(1.02) brightness(.95);
+  }
+  
+  /* title overlay */
+  .hero__content{
+    position:relative; z-index:1;
+    min-height:70vh;
+    display:grid; place-items:center;
+    text-align:center;
+    padding: 0 clamp(12px, 4vw, 48px);   /* keeps the logo off the edges on mobile */
+  }
+
+  .hero-logo{
+    display: block;
+    width: clamp(220px, 70vw, 960px);  /* min 220px, usually 70% of viewport width, max 960px */
+    height: auto;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.6));
+  }
+  /* Accessibility: honor reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .hero__bg{ animation: none; }
+    .hero__video{ display:none; }
+  }
+  
+  /* Small-height screens */
+  @media (max-height:560px){
+    .hero{ min-height:60vh; }
+    .supper{ transform: translateY(-.15em) rotate(-2deg); }
+  }
+
+  /* NAV BAR */
+
+  /* Scale logos as needed */
+.logo-desktop { max-height: 300px; }
+.logo-mobile  { max-height: 100px; }
+
+/* Keep logo from being too tall */
+.navbar-brand img {
+  max-height: 48px;   /* good size for mobile/desktop */
+  height: auto;
+  width: auto;
+}
+@media (min-width: 992px) { /* large screens */
+  .navbar-brand img {
+    max-height: 72px; /* allow it to grow bigger */
+  }
+}
+
+.navbar {
+  background: linear-gradient(to right, #ff69b4, #8a2be2); /* pink → purple */
+}
+
+
+.navbar .nav-link {
+  color: #fff !important;
+  text-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+.navbar .btn {
+  background-color: #fff;
+  color: #8a2be2;
+  font-weight: bold;
+  border: none;
+}
+.navbar .btn:hover {
+  background-color: #ff69b4;
+  color: #fff;
+}
+
+

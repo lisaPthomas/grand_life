@@ -1,0 +1,5 @@
+/* Load Bootstrap once, with your theme tokens */
+@use "bootstrap/scss/bootstrap" with (
+  $primary: #ff4a3d,
+  $warning: #ffe20a
+);

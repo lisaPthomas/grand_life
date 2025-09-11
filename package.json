@@ -1,0 +1,21 @@
+{
+  "name": "glsc",
+  "version": "1.0.0",
+  "main": "Animations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass --load-path=node_modules scss/main.scss CSS/bootstrap.css --style=compressed --no-source-map --quiet-deps",
+    "watch:css": "sass --load-path=node_modules --watch scss/main.scss CSS/bootstrap.css --style=expanded --quiet-deps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10.4.21",
+    "bootstrap": "^5.3.8",
+    "postcss": "^8.5.6",
+    "sass": "^1.92.1"
+  }
+}
