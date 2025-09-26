@@ -1,0 +1,48 @@
+# ==========================
+# DEPENDENCIES
+# ==========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# BUILD OUTPUT
+# ==========================
+dist/
+build/
+.cache/
+.DS_Store
+
+# If Netlify/Vercel create local build folders
+.netlify/
+.vercel/
+
+# ==========================
+# ENV FILES
+# ==========================
+.env
+.env.*.local
+
+# ==========================
+# OS / EDITOR FILES
+# ==========================
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+
+# VSCode
+.vscode/
+.history/
+
+# ==========================
+# SCSS / CSS GENERATED FILES
+# ==========================
+# If you compile SCSS to CSS, you can ignore the compiled files
+# and commit only your source (scss/)
+# Uncomment if you prefer that workflow:
+# css/*.css
+# css/*.map
