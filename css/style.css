@@ -99,3 +99,41 @@ img { max-width: 100%; height: auto; }
 }
 
 
+/* Swiper */
+/* Make sure the swiper container fills the width */
+swiper-container.mySwiper {
+  width: 100%;
+  min-height:70vh; /* full viewport height; adjust as needed */
+  display: block;
+
+  /* Animated gradient background */
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Animate the background colors shifting */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Swiper slide tweaks so images sit nicely */
+swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* let gradient show around slides */
+}
+
+swiper-slide img {
+  display: block;
+  width: 90%; /* slightly smaller to let gradient peek through */
+  height: auto;
+  border-radius: 12px; /* optional */
+}
+
+
+
